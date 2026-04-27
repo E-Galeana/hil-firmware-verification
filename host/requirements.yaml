@@ -1,0 +1,34 @@
+- id: REQ-001
+  text: The device shall respond to the PING command with OK PONG.
+- id: REQ-002
+  text: The device shall report its current state when GET_STATE is received.
+- id: REQ-003
+  text: The device shall reject SET_STATE values outside the range 0 to 2.
+- id: REQ-004
+  text: The system shall respond to a PING command within 15 milliseconds.
+- id: REQ-005
+  text: The system shall return 'ERR UNKNOWN_CMD' when it receives an unrecognized command.
+- id: REQ-006
+  text: The system shall reject UART frames exceeding 128 bytes with the response 'ERR LINE_TOO_LONG'.
+- id: REQ-007
+  text: The system shall reject transitions directly from FAILSAFE (2) to ACTIVE (1) with 'ERR ILLEGAL_TRANSITION'.
+- id: REQ-008
+  text: The system shall respond to the VERSION command with 'OK VERSION 0.1'.
+- id: REQ-009
+  text: The system shall correctly transition through all valid states sequentially.
+- id: REQ-010
+  text: The system shall return to STANDBY state when SET_STATE 0 is received from any state.
+- id: REQ-011
+  text: The system shall treat commands as case-sensitive and reject lowercase variants.
+- id: REQ-012
+  text: The system shall reject SET_STATE commands with non-integer arguments.
+- id: REQ-013
+  text: The system shall handle commands with leading or trailing whitespace gracefully.
+- id: REQ-014
+  text: The system shall remain stable and responsive after 50 consecutive PING commands.
+- id: REQ-015
+  text: The system shall recover and respond correctly after receiving an invalid command.
+- id: REQ-016
+  text: The system shall boot into the STANDBY state by default.
+- id: REQ-017
+  text: The system state shall not change as a result of an invalid command.

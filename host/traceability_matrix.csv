@@ -1,0 +1,18 @@
+requirement_id,requirement_text,test_case
+REQ-001,The device shall respond to the PING command with OK PONG.,test_protocol.py::test_ping
+REQ-002,The device shall report its current state when GET_STATE is received.,test_protocol.py::test_get_state
+REQ-003,The device shall reject SET_STATE values outside the range 0 to 2.,test_protocol.py::test_set_state_robustness
+REQ-004,The system shall respond to a PING command within 15 milliseconds.,test_protocol.py::test_ping_timing
+REQ-005,The system shall return 'ERR UNKNOWN_CMD' when it receives an unrecognized command.,test_protocol.py::test_unknown_command_robustness
+REQ-006,The system shall reject UART frames exceeding 128 bytes with the response 'ERR LINE_TOO_LONG'.,test_protocol.py::test_buffer_overflow_protection
+REQ-007,The system shall reject transitions directly from FAILSAFE (2) to ACTIVE (1) with 'ERR ILLEGAL_TRANSITION'.,test_protocol.py::test_illegal_state_transition
+REQ-008,The system shall respond to the VERSION command with 'OK VERSION 0.1'.,test_protocol.py::test_version
+REQ-009,The system shall correctly transition through all valid states sequentially.,test_protocol.py::test_full_state_sequence
+REQ-010,The system shall return to STANDBY state when SET_STATE 0 is received from any state.,test_protocol.py::test_return_to_standby_from_any_state
+REQ-011,The system shall treat commands as case-sensitive and reject lowercase variants.,test_protocol.py::test_case_sensitivity
+REQ-012,The system shall reject SET_STATE commands with non-integer arguments.,test_protocol.py::test_set_state_non_integer
+REQ-013,The system shall handle commands with leading or trailing whitespace gracefully.,test_protocol.py::test_whitespace_handling
+REQ-014,The system shall remain stable and responsive after 50 consecutive PING commands.,test_protocol.py::test_ping_stress
+REQ-015,The system shall recover and respond correctly after receiving an invalid command.,test_protocol.py::test_recovery_after_bad_command
+REQ-016,The system shall boot into the STANDBY state by default.,test_protocol.py::test_boot_state
+REQ-017,The system state shall not change as a result of an invalid command.,test_protocol.py::test_state_unchanged_after_bad_command
